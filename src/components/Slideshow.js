@@ -69,7 +69,15 @@ class Slideshow extends Component {
           path: '',
         },
         shields: [],
-      },
+        project_description: {
+          short: '',
+          long: '',
+        },
+        code_of_conduct: {
+          type: '',
+          path: '',
+        },
+      }
     }
   }
 
