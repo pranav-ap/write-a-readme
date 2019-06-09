@@ -50,6 +50,14 @@ const get_code_of_conduct = () => {
   )
 }
 
+const show_usage = () => {
+  return (
+    <div className={Styles.slide}>
+      show_usage
+    </div>
+  )
+}
+
 class Slideshow extends Component {
   constructor(props) {
     super(props)
@@ -67,26 +75,17 @@ class Slideshow extends Component {
 
   render() {
     return (
-      <div>
+      <div id={Styles.Slideshow}>
         {get_repo()}
         {what_license()}
         {get_shields()}
         {describe_project()}
         {setup_for_development()}
         {get_code_of_conduct()}
+        {show_usage()}
       </div>
     )
   }
 }
 
 export default Slideshow
-
-
-// 1. Get url - username and project name
-// 2. get shield links
-// 3. get license
-// 4. describe the project - short - long
-// 5. Setup for development
-//   6. external Usage - going to be used in other people code
-//   8. Screen shots / gifs
-// 9. Code of conduct
