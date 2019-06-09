@@ -1,0 +1,19 @@
+.NotFound {
+  padding: 0 18em 2em;
+}
+
+.msg {
+  font-size: 3em;
+}
+
+.redirect {
+  font-size: 2em;
+
+  &:hover {
+    color: darkcyan;
+  }
+}
+
+.msg, .redirect {
+  text-align: center;
+}

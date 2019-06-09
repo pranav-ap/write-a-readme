@@ -1,10 +1,19 @@
 import React from "react"
 
-export default () => (
-  <div>
-    hello
-  </div>
+import Layout from "../components/Layout"
+import Head from "../components/Head"
+import Progress from "../components/Progress"
+import Slideshow from "../components/Slideshow"
+
+const Home = () => (
+  <Layout>
+    <Head title={"Home"}/>
+    <Progress/>
+    <Slideshow/>
+  </Layout>
 )
+
+export default Home
 
 
 // 1. Get url - username and project name

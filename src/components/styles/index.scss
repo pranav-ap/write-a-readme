@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  margin: 0;
+  padding: 0;
+}
+
+input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0 3px 3px;
+  margin: 5px 1px 3px 0;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0 3px 3px;
+  margin: 5px 1px 3px 0;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
+::selection {
+  background: #ffb7b7;
+}
+
+::-moz-selection {
+  background: #ffb7b7;
+}
+
+.number {
+  font-size: 1.1rem !important;
+  margin-right: 0 !important;
+  min-width: 1rem !important;
+  background-color: #2d2d2d !important;
+  padding: 0 !important;
+  vertical-align: inherit !important;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import '../../../node_modules/bulma/bulma';

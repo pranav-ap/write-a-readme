@@ -1,0 +1,18 @@
+.Header {
+  padding: 2em 1em 1em;
+}
+
+.title {
+  font-size: 1.5em;
+  color: #287fc9;
+}
+
+.item {
+  font-size: 1.5em;
+  color: black;
+
+  &:visited {
+    color: black;
+  }
+}
+

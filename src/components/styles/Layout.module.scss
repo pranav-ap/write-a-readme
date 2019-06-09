@@ -1,0 +1,21 @@
+#Layout {
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  margin: auto;
+
+  // tablet and above
+  @media (min-width: 769px) {
+    width: 75%;
+  }
+
+  // desktop and above
+  @media (min-width: 1024px) {
+    width: 60%;
+  }
+
+  // widescreen and above
+  @media (min-width: 1408px) {
+    width: 35%;
+  }
+}
