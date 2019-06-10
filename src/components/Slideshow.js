@@ -141,6 +141,7 @@ const get_shields = () => {
 const describe_project = () => {
   return (
     <div className={Styles.slide}>
+      <h1>Describe the purpose of the project</h1>
       <textarea className="textarea" placeholder="Hello world"/>
     </div>
   )
@@ -149,15 +150,32 @@ const describe_project = () => {
 const setup_for_development = () => {
   return (
     <div className={Styles.slide}>
+      <h1>Setup for development</h1>
       <textarea className="textarea" placeholder="Hello world"/>
     </div>
   )
 }
 
-const show_usage = () => {
+const built_with = () => {
   return (
     <div className={Styles.slide}>
-      <textarea className="textarea" placeholder="Hello world"/>
+      <div className="content">
+        <ol type="1">
+          <li>React</li>
+          <li>Redux</li>
+          <li>Gatsby</li>
+        </ol>
+      </div>
+      <div className="field has-addons">
+        <div className="control">
+          <input className="input" type="text" placeholder="Tool used"/>
+        </div>
+        <div className="control">
+          <a className="button is-info">
+            Search
+          </a>
+        </div>
+      </div>
     </div>
   )
 }
@@ -189,7 +207,10 @@ class Slideshow extends Component {
         {get_shields()}
         {describe_project()}
         {setup_for_development()}
-        {show_usage()}
+        {built_with()}
+        <div>
+          <a className="button is-medium is-primary">Generate README.md</a>
+        </div>
       </div>
     )
   }
