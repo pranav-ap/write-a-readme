@@ -5,7 +5,31 @@ import Styles from './styles/Slideshow.module.scss'
 const get_repo = () => {
   return (
     <div className={Styles.slide}>
-      get_repo
+      <div className="field is-horizontal">
+        <div className="field-label is-normal">
+          <label className="label">Username</label>
+        </div>
+        <div className="field-body">
+          <div className="field">
+            <p className="control">
+              <input className="input" type="text" placeholder="Username"/>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="field is-horizontal">
+        <div className="field-label is-normal">
+          <label className="label">Project Name</label>
+        </div>
+        <div className="field-body">
+          <div className="field">
+            <p className="control">
+              <input className="input" type="text" placeholder="Project Name"/>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
@@ -13,7 +37,24 @@ const get_repo = () => {
 const what_license = () => {
   return (
     <div className={Styles.slide}>
-      what_license
+      <div className="field is-horizontal">
+        <div className="field-label is-normal">
+          <label className="label">License</label>
+        </div>
+        <div className="field-body">
+          <div className="field is-narrow">
+            <div className="control">
+              <div className="select is-fullwidth">
+                <select>
+                  <option>Business development</option>
+                  <option>Marketing</option>
+                  <option>Sales</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
@@ -21,7 +62,78 @@ const what_license = () => {
 const get_shields = () => {
   return (
     <div className={Styles.slide}>
-      get_shields
+      <div className="field is-grouped is-grouped-multiline">
+        <div className="control">
+          <div className="tags has-addons">
+            <span className="tag is-dark">npm</span>
+            <span className="tag is-info">0.5.0</span>
+          </div>
+        </div>
+
+        <div className="control">
+          <div className="tags has-addons">
+            <span className="tag is-dark">build</span>
+            <span className="tag is-success">passing</span>
+          </div>
+        </div>
+
+        <div className="control">
+          <div className="tags has-addons">
+            <span className="tag is-dark">chat</span>
+            <span className="tag is-primary">on gitter</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">Badge Name</label>
+          </div>
+          <div className="field-body">
+            <div className="field">
+              <p className="control">
+                <input className="input" type="text" placeholder="Badge Name"/>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">Message</label>
+          </div>
+          <div className="field-body">
+            <div className="field">
+              <p className="control">
+                <input className="input" type="text" placeholder="Message"/>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="field is-horizontal">
+          <div className="field-label is-normal">
+            <label className="label">Color</label>
+          </div>
+          <div className="field-body">
+            <div className="field">
+              <p className="control">
+                <div className="select">
+                  <select>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </select>
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <a className="button is-primary">Primary</a>
+      </div>
     </div>
   )
 }
@@ -29,7 +141,7 @@ const get_shields = () => {
 const describe_project = () => {
   return (
     <div className={Styles.slide}>
-      describe_project
+      <textarea className="textarea" placeholder="Hello world"/>
     </div>
   )
 }
@@ -37,15 +149,7 @@ const describe_project = () => {
 const setup_for_development = () => {
   return (
     <div className={Styles.slide}>
-      setup_for_development
-    </div>
-  )
-}
-
-const get_code_of_conduct = () => {
-  return (
-    <div className={Styles.slide}>
-      get_code_of_conduct
+      <textarea className="textarea" placeholder="Hello world"/>
     </div>
   )
 }
@@ -53,7 +157,7 @@ const get_code_of_conduct = () => {
 const show_usage = () => {
   return (
     <div className={Styles.slide}>
-      show_usage
+      <textarea className="textarea" placeholder="Hello world"/>
     </div>
   )
 }
@@ -72,11 +176,7 @@ class Slideshow extends Component {
         project_description: {
           short: '',
           long: '',
-        },
-        code_of_conduct: {
-          type: '',
-          path: '',
-        },
+        }
       }
     }
   }
@@ -89,7 +189,6 @@ class Slideshow extends Component {
         {get_shields()}
         {describe_project()}
         {setup_for_development()}
-        {get_code_of_conduct()}
         {show_usage()}
       </div>
     )
