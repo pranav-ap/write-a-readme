@@ -132,7 +132,7 @@ const get_shields = () => {
       </div>
 
       <div>
-        <a className="button is-primary">Primary</a>
+        <a className="button is-primary">Add Shield</a>
       </div>
     </div>
   )
