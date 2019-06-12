@@ -2,31 +2,42 @@ import React, { Component } from 'react'
 
 import Styles from './styles/Slideshow.module.scss'
 
-const get_repo = () => {
+
+const get_input_bar = (label, placeholder) => {
   return (
-    <div className={Styles.slide}>
-      <div className="field is-horizontal">
-        <div className="field-label is-normal">
-          <label className="label">Username</label>
-        </div>
-        <div className="field-body">
-          <div className="field">
-            <p className="control">
-              <input className="input" type="text" placeholder="Username"/>
-            </p>
-          </div>
+    <div className="field is-horizontal">
+      <div className="field-label is-normal">
+        <label className="label">{label}</label>
+      </div>
+      <div className="field-body">
+        <div className="field">
+          <p className="control">
+            <input className="input" type="text" placeholder={placeholder}/>
+          </p>
         </div>
       </div>
+    </div>
+  )
+}
 
-      <div className="field is-horizontal">
-        <div className="field-label is-normal">
-          <label className="label">Project Name</label>
-        </div>
-        <div className="field-body">
-          <div className="field">
-            <p className="control">
-              <input className="input" type="text" placeholder="Project Name"/>
-            </p>
+const get_dropdown = (label, options) => {
+  return (
+    <div className="field is-horizontal">
+      <div className="field-label is-normal">
+        <label className="label">{label}</label>
+      </div>
+      <div className="field-body">
+        <div className="field is-narrow">
+          <div className="control">
+            <div className="select is-fullwidth">
+              <select>
+                {
+                  options.map(option => {
+                    return (<option>{option}</option>)
+                  })
+                }
+              </select>
+            </div>
           </div>
         </div>
       </div>
@@ -34,27 +45,19 @@ const get_repo = () => {
   )
 }
 
+const get_repo = () => {
+  return (
+    <div className={Styles.slide}>
+      {get_input_bar('Username', 'Username')}
+      {get_input_bar('Project Name', 'Project Name')}
+    </div>
+  )
+}
+
 const what_license = () => {
   return (
     <div className={Styles.slide}>
-      <div className="field is-horizontal">
-        <div className="field-label is-normal">
-          <label className="label">License</label>
-        </div>
-        <div className="field-body">
-          <div className="field is-narrow">
-            <div className="control">
-              <div className="select is-fullwidth">
-                <select>
-                  <option>Business development</option>
-                  <option>Marketing</option>
-                  <option>Sales</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {get_dropdown('License', ['MiT', 'ISC', 'GPL'])}
     </div>
   )
 }
