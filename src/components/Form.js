@@ -78,9 +78,13 @@ const built_with = () => {
   return (
     <div className={Styles.group}>
       <NumberedList id={'built-with'} items={['React', 'Gatsby']}/>
+
       <div className="field has-addons">
         <div className="control">
-          <input className="input" type="text" placeholder="Tool used"/>
+          <input className="input" type="text" placeholder="Find a repository"/>
+        </div>
+        <div className="control">
+          <a className="button is-info">Search</a>
         </div>
       </div>
     </div>
@@ -99,6 +103,7 @@ class Form extends Component {
         },
         shields: [],
         project_description: '',
+        built_with: [],
       }
     }
   }
