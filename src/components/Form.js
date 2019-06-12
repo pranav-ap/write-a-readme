@@ -1,55 +1,18 @@
 import React, { Component } from 'react'
 
+import InputBar from './InputBar'
+import Dropdown from './Dropdown'
+import Textarea from './Textarea'
+import NumberedList from './NumberedList'
+
 import Styles from './styles/Form.module.scss'
 
-
-const get_input_bar = (label, placeholder) => {
-  return (
-    <div className="field is-horizontal">
-      <div className="field-label is-normal">
-        <label className="label">{label}</label>
-      </div>
-      <div className="field-body">
-        <div className="field">
-          <p className="control">
-            <input className="input" type="text" placeholder={placeholder}/>
-          </p>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const get_dropdown = (label, options) => {
-  return (
-    <div className="field is-horizontal">
-      <div className="field-label is-normal">
-        <label className="label">{label}</label>
-      </div>
-      <div className="field-body">
-        <div className="field is-narrow">
-          <div className="control">
-            <div className="select is-fullwidth">
-              <select>
-                {
-                  options.map(option => {
-                    return (<option>{option}</option>)
-                  })
-                }
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const get_repo = () => {
   return (
     <div className={Styles.group}>
-      {get_input_bar('Username', 'Username')}
-      {get_input_bar('Project Name', 'Project Name')}
+      <InputBar label={'Username'} placeholder={'Username'}/>
+      <InputBar label={'Project Name'} placeholder={'Project Name'}/>
     </div>
   )
 }
@@ -57,7 +20,7 @@ const get_repo = () => {
 const what_license = () => {
   return (
     <div className={Styles.group}>
-      {get_dropdown('License', ['MIT', 'ISC', 'GPL'])}
+      <Dropdown label={'License'} options={['MIT', 'ISC', 'GPL']}/>
     </div>
   )
 }
@@ -81,9 +44,9 @@ const get_shields = () => {
       </div>
 
       <div>
-        {get_input_bar('Badge Name', 'Badge Name')}
-        {get_input_bar('Message', 'Message')}
-        {get_dropdown('Color', ['Blue', 'Red', 'Green'])}
+        <InputBar label={'Badge Name'} placeholder={'Badge Name'}/>
+        <InputBar label={'Message'} placeholder={'Message'}/>
+        <Dropdown label={'Color'} options={['Blue', 'Red', 'Green']}/>
       </div>
 
       <div>
@@ -93,17 +56,11 @@ const get_shields = () => {
   )
 }
 
-const get_textarea = (placeholder) => {
-  return (
-    <textarea className="textarea" placeholder={placeholder}/>
-  )
-}
-
 const describe_project = () => {
   return (
     <div className={Styles.group}>
       <h1>Describe the purpose of the project</h1>
-      {get_textarea('Hello world')}
+      <Textarea id={'project-description'} placeholder={'Hello world'}/>
     </div>
   )
 }
@@ -112,7 +69,7 @@ const setup_for_development = () => {
   return (
     <div className={Styles.group}>
       <h1>Setup for development</h1>
-      {get_textarea('Hello world')}
+      <Textarea id={'project-description'} placeholder={'Hello world'}/>
     </div>
   )
 }
@@ -120,13 +77,7 @@ const setup_for_development = () => {
 const built_with = () => {
   return (
     <div className={Styles.group}>
-      <div className="content">
-        <ol type="1" id={'tools-used-list'}>
-          <li>React</li>
-          <li>Redux</li>
-          <li>Gatsby</li>
-        </ol>
-      </div>
+      <NumberedList id={'built-with'} items={['React', 'Gatsby']}/>
       <div className="field has-addons">
         <div className="control">
           <input className="input" type="text" placeholder="Tool used"/>
@@ -147,10 +98,7 @@ class Form extends Component {
           path: '',
         },
         shields: [],
-        project_description: {
-          short: '',
-          long: '',
-        }
+        project_description: '',
       }
     }
   }
