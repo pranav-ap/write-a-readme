@@ -7,7 +7,7 @@ const ProfileSlide = () => {
   return (
     <div className="columns" id={Styles.ProfileSlide}>
       <div className="column">
-        <h1>ProfileSlide</h1>
+        <h1 className={'is-size-1'}>Profile</h1>
         <Next/>
       </div>
     </div>

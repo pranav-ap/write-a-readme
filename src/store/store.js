@@ -1,23 +1,25 @@
 import { action, createStore } from 'easy-peasy'
 
-let state = {
+const profile = {
   username: '',
   repo: '',
-  license: '',
-  shields: [],
-  project_description: '',
-  built_with: [],
+
+  set_profile: action((state, { name, repo }) => {
+    state.username = name
+    state.repo = repo
+  }),
 }
 
-const actions = {
-  set_name: action((state, name) => state.username = name),
-  set_repo: action((state, repo) => state.repo = repo),
-  set_license: action((state, license) => state.license = license),
+const ui = {
+  active_slide: 0,
+  next_slide: action(state => {
+    state.active_slide += 1
+  }),
 }
 
 const store = createStore({
-  ...state,
-  ...actions,
+  profile,
+  ui,
 })
 
 export default store

@@ -1,0 +1,21 @@
+#DownloadSlide {
+  #ButtonGroup {
+    margin-top: 2.5em;
+    justify-content: center;
+
+    .Button {
+      padding-left: 3em;
+      padding-right: 3em;
+
+      font-weight: 300;
+    }
+  }
+
+  #DownloadPicture {
+    margin: 0 auto;
+    display: block;
+
+    width: 100%;
+    height: 20em;
+  }
+}
