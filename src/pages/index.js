@@ -2,14 +2,14 @@ import React from 'react'
 
 import Layout from '../components/Layout'
 import Head from '../components/Head'
-import Form from '../components/Form'
+import SlideShow from '../components/SlideShow'
 
 import './styles/index.scss'
 
 const Home = () => (
   <Layout>
     <Head title={'Home'}/>
-    <Form/>
+    <SlideShow/>
   </Layout>
 )
 
