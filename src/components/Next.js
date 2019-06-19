@@ -3,17 +3,22 @@ import { useStoreActions } from 'easy-peasy'
 
 import Styles from './styles/Next.module.scss'
 
-const Next = () => {
+const Next = ({ is_valid }) => {
   const next_slide = useStoreActions(actions => actions.ui.next_slide)
 
   return (
-    <div className="columns" id={Styles.Next}>
-      <div className="column">
-        <a
-          className="button is-primary is-medium"
-          id={Styles.NextButton}
-          onClick={() => next_slide()}>Next</a>
-      </div>
+    <div className={Styles.Next}>
+      <a
+        className="button is-primary is-medium is-rounded"
+        id={Styles.NextButton}
+        href={``}
+        onClick={() => {
+          if (is_valid()) {
+            next_slide()
+          } else {
+            console.log('not valid')
+          }
+        }}>Next</a>
     </div>
   )
 }
