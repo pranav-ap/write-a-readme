@@ -9,8 +9,7 @@ const is_valid = () => {
   const username = document.getElementById('username').value
   const project_name = document.getElementById('project-name').value
 
-  console.log(username, project_name)
-  return true
+  return username && project_name
 }
 
 const ProfileSlide = () => {

@@ -28,7 +28,6 @@ const get_slide = (active_slide) => {
 
 const SlideShow = () => {
   const active_slide = useStoreState(state => state.ui.active_slide)
-  console.log(active_slide)
 
   return (
     <div className="columns" id={Styles.SlideShow}>

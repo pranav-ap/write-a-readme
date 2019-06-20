@@ -8,7 +8,7 @@ const Next = ({ is_valid }) => {
 
   return (
     <div className={Styles.Next}>
-      <a
+      <button
         className="button is-primary is-medium is-rounded"
         id={Styles.NextButton}
         href={``}
@@ -18,7 +18,8 @@ const Next = ({ is_valid }) => {
           } else {
             console.log('not valid')
           }
-        }}>Next</a>
+        }}>Next
+      </button>
     </div>
   )
 }
