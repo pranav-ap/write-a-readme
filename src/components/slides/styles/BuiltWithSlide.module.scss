@@ -1,3 +1,16 @@
 #BuiltWithSlide {
+  #Collection {
 
+  }
+
+  i {
+    font-size: 8em;
+    display: inline-block;
+    padding: 0.3em;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
 }
