@@ -1,32 +1,39 @@
 import React from 'react'
 
+import Title from './components/Title'
 import Next from '../Next'
 
 import Styles from './styles/LicenseSlide.module.scss'
 import BaseStyles from './styles/Slide.module.scss'
 
 const is_valid = () => {
-  const license = document.getElementById('')
-  return true
+  const license = document.querySelector('input[name="license"]:checked').id
+  return license !== ''
 }
 
-const LicenseSlide = () => {
+const get_options = () => {
   const licenses = ['MIT', 'ISC', 'Apache']
 
   return (
+    licenses.map(license => {
+      return (
+        <div className={Styles.Option} key={license}>
+          <input className="is-checkradio" id={license} type="radio" name='license'/>
+          <label htmlFor={license}>{license}</label>
+        </div>
+      )
+    })
+  )
+}
+
+const LicenseSlide = () => {
+  return (
     <div className={`columns ${BaseStyles.Slide}`} id={Styles.LicenseSlide}>
       <div className="column">
-        <h1 className={`is-size-2 ${BaseStyles.title}`}>What license are you using?</h1>
+        <Title title={'What license are you using?'}/>
 
-        <div className="control">
-          <label className="radio">
-            <input type="radio" name="foobar"/>
-            Foo
-          </label>
-          <label className="radio">
-            <input type="radio" name="foobar"/>
-            Bar
-          </label>
+        <div className="field">
+          {get_options()}
         </div>
 
         <Next is_valid={() => is_valid()}/>

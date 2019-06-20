@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Title from './components/Title'
 import Next from '../Next'
 
 import Styles from './styles/ProfileSlide.module.scss'
@@ -16,7 +17,7 @@ const ProfileSlide = () => {
   return (
     <div className={`columns ${BaseStyles.Slide}`} id={Styles.ProfileSlide}>
       <div className="column">
-        <h1 className={`is-size-2 ${BaseStyles.title}`}>Basic&nbsp;Profile</h1>
+        <Title title={'Basic Profile'}/>
 
         <div className="field">
           <div className="control has-icons-left">

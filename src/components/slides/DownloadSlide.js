@@ -12,10 +12,10 @@ const DownloadSlide = () => {
 
       <div className="field is-grouped" id={Styles.ButtonGroup}>
         <p className="control">
-          <a className={`button is-medium is-primary is-outlined ${Styles.Button}`}>Preview</a>
+          <button className={`button is-medium is-primary is-outlined ${Styles.Button}`}>Preview</button>
         </p>
         <p className="control">
-          <a className={`button is-medium is-link ${Styles.Button}`}>Download</a>
+          <button className={`button is-medium is-link ${Styles.Button}`}>Download</button>
         </p>
       </div>
     </div>

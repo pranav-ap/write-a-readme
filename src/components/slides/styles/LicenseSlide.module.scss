@@ -1,4 +1,15 @@
 #LicenseSlide {
-  width: 75%;
-  margin: 0 auto;
+  .Option {
+    margin: 1em;
+    display: block;
+    padding: 0.3em;
+
+    input {
+      margin-right: 1em;
+    }
+
+    label {
+      font-size: 1.1em;
+    }
+  }
 }

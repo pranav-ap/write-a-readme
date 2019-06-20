@@ -12,9 +12,9 @@ import Styles from './styles/SlideShow.module.scss'
 
 const get_slide = (active_slide) => {
   if (active_slide === 0) {
-    return <ProfileSlide/>
-  } else if (active_slide === 1) {
     return <LicenseSlide/>
+  } else if (active_slide === 1) {
+    return <ProfileSlide/>
   } else if (active_slide === 2) {
     return <DescriptionSlide/>
   } else if (active_slide === 3) {
