@@ -15,22 +15,22 @@ const is_valid = () => {
 
 const ProfileSlide = () => {
   return (
-    <div className={`columns ${BaseStyles.Slide}`} id={Styles.ProfileSlide}>
+    <div className={`columns ${BaseStyles.Slide}`}>
       <div className="column">
         <Title title={'Basic Profile'}/>
 
         <div className="field">
-          <div className="control has-icons-left">
+          <div className={`control has-icons-left ${Styles.Input}`}>
             <input id={'username'} className="input is-large is-rounded" type="text" placeholder="Username"/>
             <span className="icon is-small is-left">
-              <i className="fa fa-user"/>
+              <i className={`fa fa-user`}/>
             </span>
           </div>
 
-          <div className="control has-icons-left">
+          <div className={`control has-icons-left ${Styles.Input}`}>
             <input id={'project-name'} className="input is-large is-rounded" type="text" placeholder="Project Name"/>
             <span className="icon is-small is-left">
-              <i className="fa fa-github"/>
+              <i className={`fa fa-github`}/>
             </span>
           </div>
         </div>
