@@ -10,6 +10,17 @@ const profile = {
   }),
 }
 
+const built_with = {
+  tools: ['React', 'NodeJS', 'GraphQL', 'MongoDB', 'Python', 'Pandas'],
+
+  add_tool: action((state, tool) => {
+    state.tools.push(tool)
+  }),
+  remove_tool: action((state, tool) => {
+    state.tools = state.tools.filter(t => t !== tool)
+  }),
+}
+
 const ui = {
   active_slide: 0,
   next_slide: action(state => {
@@ -19,6 +30,7 @@ const ui = {
 
 const store = createStore({
   profile,
+  built_with,
   ui,
 })
 

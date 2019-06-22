@@ -1,4 +1,6 @@
 import React from 'react'
+import { useStoreActions, useStoreState } from 'easy-peasy'
+import store from './../../store/store'
 
 import Title from './components/Title'
 import Next from '../Next'
@@ -10,36 +12,43 @@ const is_valid = () => {
   return true
 }
 
-const add_tag = (tool) => {
-  const tag = (
-    <div className="control">
+const add_tag = (tool, key, remove_tool) => {
+  return (
+    <div className="control" key={key}>
       <div className="tags has-addons">
         <span className="tag is-primary is-medium">{tool}</span>
-        <a className="tag is-delete is-medium"/>
+        <a
+          className="tag is-delete is-medium"
+          onClick={() => {
+            remove_tool(tool)
+          }}/>
       </div>
     </div>
   )
-
-  console.log(tag)
 }
 
-const on_add_tool = () => {
-  const tool = document.getElementById('tool').value
+const Collection = () => {
+  const tools = useStoreState(state => state.built_with.tools)
+  const remove_tool = store.getActions().built_with.remove_tool
 
-  if (tool.length) {
-    add_tag(tool)
-  }
+  return (
+    <div className={`field is-grouped is-grouped-multiline ${Styles.Collection}`} id={`Collection`}>
+      {
+        tools.map((tool, key) => add_tag(tool, key, remove_tool))
+      }
+    </div>
+  )
 }
 
 const BuiltWithSlide = () => {
+  const add_tool = useStoreActions(actions => actions.built_with.add_tool)
+
   return (
     <div className={`columns ${BaseStyles.Slide}`} id={Styles.BuiltWithSlide}>
       <div className="column">
         <Title title={'What tools did you use?'}/>
 
-        <div className={`field is-grouped is-grouped-multiline ${Styles.Collection}`} id={`Collection`}>
-
-        </div>
+        <Collection/>
 
         <div className="field has-addons" id={Styles.Input}>
           <div className="control is-expanded">
@@ -48,7 +57,14 @@ const BuiltWithSlide = () => {
           <div className="control">
             <button
               className="button is-info is-large is-rounded"
-              onClick={on_add_tool}>Add
+              onClick={() => {
+                const tool = document.getElementById('tool').value
+
+                if (tool.length) {
+                  add_tool(tool)
+                  document.getElementById('tool').value = ''
+                }
+              }}>Add
             </button>
           </div>
         </div>
