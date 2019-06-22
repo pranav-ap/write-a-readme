@@ -1,15 +1,11 @@
 import React from 'react'
+import { useStoreActions } from 'easy-peasy'
 
 import Title from './components/Title'
 import Next from '../Next'
 
 import Styles from './styles/LicenseSlide.module.scss'
 import BaseStyles from './styles/Slide.module.scss'
-
-const is_valid = () => {
-  const license = document.querySelector('input[name="license"]:checked').id
-  return license !== ''
-}
 
 const get_options = () => {
   const licenses = ['MIT', 'ISC', 'Apache']
@@ -27,6 +23,8 @@ const get_options = () => {
 }
 
 const LicenseSlide = () => {
+  const set_license = useStoreActions(actions => actions.license.set_license)
+
   return (
     <div className={`columns ${BaseStyles.Slide}`} id={Styles.LicenseSlide}>
       <div className="column">
@@ -36,7 +34,16 @@ const LicenseSlide = () => {
           {get_options()}
         </div>
 
-        <Next is_valid={() => is_valid()}/>
+        <Next is_valid={() => {
+          const license = document.querySelector('input[name="license"]:checked').id
+
+          if (license !== '') {
+            set_license(license)
+            return true
+          }
+
+          return false
+        }}/>
       </div>
     </div>
   )

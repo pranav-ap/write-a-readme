@@ -1,12 +1,31 @@
 import { action, createStore } from 'easy-peasy'
 
 const profile = {
-  username: '',
   repo: '',
 
-  set_profile: action((state, { name, repo }) => {
-    state.username = name
+  set_profile: action((state, repo) => {
     state.repo = repo
+  }),
+}
+
+const license = {
+  type: '',
+  set_license: action((state, type) => {
+    state.type = type
+  }),
+}
+
+const dev_setup = {
+  content: '',
+  set_content: action((state, content) => {
+    state.content = content
+  }),
+}
+
+const description = {
+  content: '',
+  set_content: action((state, content) => {
+    state.content = content
   }),
 }
 
@@ -30,6 +49,9 @@ const ui = {
 
 const store = createStore({
   profile,
+  license,
+  description,
+  dev_setup,
   built_with,
   ui,
 })

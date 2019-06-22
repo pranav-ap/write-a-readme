@@ -16,9 +16,10 @@ const add_tag = (tool, key, remove_tool) => {
   return (
     <div className="control" key={key}>
       <div className="tags has-addons">
-        <span className="tag is-primary is-medium">{tool}</span>
+        <span className="tag is-info is-medium">{tool}</span>
         <a
           className="tag is-delete is-medium"
+          href={''}
           onClick={() => {
             remove_tool(tool)
           }}/>
@@ -48,8 +49,6 @@ const BuiltWithSlide = () => {
       <div className="column">
         <Title title={'What tools did you use?'}/>
 
-        <Collection/>
-
         <div className="field has-addons" id={Styles.Input}>
           <div className="control is-expanded">
             <input id={'tool'} className="input is-large is-rounded" type="text" placeholder="Enter the Tool"/>
@@ -68,6 +67,8 @@ const BuiltWithSlide = () => {
             </button>
           </div>
         </div>
+
+        <Collection/>
 
         <Next is_valid={is_valid}/>
       </div>
