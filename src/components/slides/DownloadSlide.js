@@ -15,21 +15,22 @@ const DownloadSlide = () => {
   const tools = useStoreState(state => state.built_with.tools)
 
   const click_download = () => {
-    console.log(tools)
-
     const blob = new Blob([
-      '#', repo, '\n',
-      license,
+      '# ', repo, '\n\n',
+      description, '\n\n',
 
-      '\n\n', '## Description', '\n',
-      description,
+      '## Development Setup', '\n\n',
+      dev_setup, '\n\n',
 
-      '\n\n', '## Development Setup', '\n',
-      dev_setup,
+      '## Built With', '\n\n',
+      ...tools.map(tool => `- ${tool} \n`), '\n',
 
-      '\n\n', '## Built With', '\n',
-      tools.map(tool => `- ${tool} \n`),
-    ], { type: 'text/markdown;charset=utf-8' })
+      '## License', '\n\n',
+      'This project in under the ', license, ' license.',
+    ], {
+      type: 'text/markdown;charset=utf-8',
+    })
+
     saveAs(blob, 'README.md')
   }
 
