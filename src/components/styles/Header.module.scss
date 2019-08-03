@@ -5,6 +5,11 @@
 .title {
   font-size: 1.5em;
   color: #287fc9;
+
+  &:hover {
+    cursor: pointer;
+    border-bottom: 2px double #00d1b2;
+  }
 }
 
 .item {

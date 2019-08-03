@@ -42,6 +42,9 @@ const built_with = {
 
 const ui = {
   active_slide: 0,
+  set_slide: action((state, id) => {
+    state.active_slide = id
+  }),
   next_slide: action(state => {
     state.active_slide += 1
   }),
