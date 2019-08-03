@@ -20,7 +20,9 @@ const add_tag = (tool, key, remove_tool) => {
         <a
           className="tag is-delete is-medium"
           href={''}
-          onClick={() => {
+          type="button"
+          onClick={(e) => {
+            e.preventDefault()
             remove_tool(tool)
           }}/>
       </div>

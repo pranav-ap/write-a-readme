@@ -10,9 +10,12 @@ const Next = ({ is_valid }) => {
     <div className={Styles.Next}>
       <button
         className="button is-primary is-medium is-rounded"
+        type="button"
         id={Styles.NextButton}
         href={``}
-        onClick={() => {
+        onClick={(e) => {
+          e.preventDefault()
+
           if (is_valid()) {
             next_slide()
           } else {
