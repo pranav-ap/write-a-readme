@@ -40,9 +40,6 @@ const DownloadSlide = () => {
 
       <div className="field is-grouped" id={Styles.ButtonGroup}>
         <p className="control">
-          <button className={`button is-medium is-primary is-outlined ${Styles.Button}`}>Preview</button>
-        </p>
-        <p className="control">
           <button
             className={`button is-medium is-info ${Styles.Button}`}
             onClick={() => click_download()}>Download
