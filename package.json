@@ -22,7 +22,7 @@
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sitemap": "^2.1.0",
     "node-sass": "^4.12.0",
-    "react": "^16.8.6",
+    "react": "^16.9.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-spring": "^8.0.23"
